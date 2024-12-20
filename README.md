@@ -1,97 +1,97 @@
 # Coderr Backend
 
-Das Backend des Coderr-Projekts ist eine RESTful API, die mit **Django** und **Django REST Framework** entwickelt wurde. Es dient als Server, der das Frontend unterstützt, und bietet Funktionen wie Benutzerregistrierung, Login, Verwaltung von Angeboten, Bestellungen und Bewertungen.
+The Coderr backend is a RESTful API built with **Django** and **Django REST Framework**. It supports the frontend by providing essential functionalities such as user registration, login, and the management of offers, orders, and reviews.
 
-## Inhaltsverzeichnis
-1. [Überblick](#überblick)
+## Table of Contents
+1. [Overview](#overview)
 2. [Features](#features)
-3. [Technologien](#technologien)
+3. [Technologies](#technologies)
 4. [Installation](#installation)
-5. [API-Endpunkte](#api-endpunkte)
-6. [Hilfsfunktionen](#hilfsfunktionen)
+5. [API Endpoints](#api-endpoints)
+6. [Helper Functions](#helper-functions)
 7. [Contributing](#contributing)
-8. [Lizenz](#lizenz)
+8. [License](#license)
 
 ---
 
-## Überblick
+## Overview
 
-Das Coderr-Backend stellt eine Reihe von REST-APIs bereit, die vom Frontend konsumiert werden. Es verwaltet Benutzerprofile, Angebote, Bestellungen und Bewertungen und stellt Daten sowie geschäftsspezifische Logik zur Verfügung.
+The Coderr backend is designed to handle data management and business-specific logic for the Coderr platform. It provides RESTful APIs to manage user profiles, offers, orders, reviews, and related statistics.
 
 ---
 
 ## Features
 
-- **Benutzerregistrierung und Authentifizierung**:
-  - Registrieren und Anmelden von Benutzern.
-  - Unterschiedliche Rollen: Kunde und Anbieter.
-- **Angebotsmanagement**:
-  - Erstellen, Aktualisieren und Löschen von Angeboten.
-  - Filter- und Suchfunktionalität.
-- **Bestellmanagement**:
-  - Aufgeben und Verwalten von Bestellungen.
-  - Statusverwaltung von Bestellungen.
-- **Bewertungen**:
-  - Bewertungen erstellen, bearbeiten und löschen.
-- **Statistiken**:
-  - Statistiken zu abgeschlossenen Bestellungen und Bewertungen.
+- **User Authentication**:
+  - User registration and login.
+  - Role-based access control (Customer and Provider).
+- **Offer Management**:
+  - Create, update, delete, and retrieve offers.
+  - Filter and search offers.
+- **Order Management**:
+  - Place and manage orders.
+  - Manage order statuses.
+- **Review Management**:
+  - Add, edit, delete, and view reviews.
+- **Statistics**:
+  - View completed orders and review counts.
 - **Pagination**:
-  - Paginierte Endpunkte für eine bessere Benutzererfahrung.
+  - Paginated endpoints for efficient data access.
 
 ---
 
-## Technologien
+## Technologies
 
-- **Programmiersprache**: Python
+- **Programming Language**: Python
 - **Framework**: Django, Django REST Framework
-- **Datenbank**: SQLite
-- **Abhängigkeiten**: 
+- **Database**: SQLite
+- **Dependencies**: 
   - `django-cors-headers`
   - `django-filter`
   - `pillow`
-  - Weitere Details in der Datei `requirements.txt`.
+  - For a complete list, refer to the `requirements.txt` file.
 
 ---
 
 ## Installation
 
-### Voraussetzungen
+### Prerequisites
 - Python 3.10+
 - Git
 
-### Schritte
+### Steps
 
-1. **Repository klonen**:
+1. **Clone the Repository**:
    ```bash
    git clone https://github.com/Seldir193/coderr-backend.git
    cd coderr-backend
    ```
 
-2. **Virtuelle Umgebung erstellen und aktivieren**:
+2. **Create and Activate a Virtual Environment**:
    ```bash
    python -m venv env
-   source env/bin/activate  # Für Linux/macOS
-   env\Scripts\activate     # Für Windows
+   source env/bin/activate  # For Linux/macOS
+   env\Scripts\activate     # For Windows
    ```
 
-3. **Abhängigkeiten installieren**:
+3. **Install Dependencies**:
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Datenbank migrieren**:
+4. **Migrate the Database**:
    ```bash
    python manage.py migrate
    ```
 
-5. **Entwicklungsserver starten**:
+5. **Start the Development Server**:
    ```bash
    python manage.py runserver
    ```
 
-## API Endpoints
+---
 
-The following endpoints are available in the Coderr backend:
+## API Endpoints
 
 ### Authentication
 - **POST** `/registration/`  
@@ -149,23 +149,24 @@ The following endpoints are available in the Coderr backend:
 - **GET** `/base-info/`  
   Retrieves base information about the system.
 
+---
 
-## Hilfsfunktionen
+## Helper Functions
 
-Das Backend enthält verschiedene Hilfsfunktionen für unterschiedliche Zwecke:
+The backend includes several helper functions for different purposes:
 
-- **`profile_helpers.py`**: Validierung und Verarbeitung von Benutzerdaten.
-- **`utils.py`**: Gemeinsame Funktionen wie String-Formatierung.
-- **`functions.py`**: Geschäftsspezifische Logik.
+- **`profile_helpers.py`**: Functions for user profile validation and processing.
+- **`utils.py`**: Utility functions like string formatting and data manipulation.
+- **`functions.py`**: Business-specific logic used across multiple views.
 
 ---
 
 ## Contributing
 
-Beiträge sind willkommen! Erstelle einen Fork des Projekts, führe Änderungen durch und sende einen Pull-Request.
+Contributions are welcome! Fork the repository, create a new branch, and submit a pull request with your changes.
 
 ---
 
-## Lizenz
+## License
 
-Dieses Projekt steht unter der MIT-Lizenz. Weitere Informationen findest du in der Datei [LICENSE](LICENSE).
+This project is licensed under the MIT License. For more details, see the [LICENSE](LICENSE) file.
