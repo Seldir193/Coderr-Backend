@@ -91,88 +91,64 @@ Das Coderr-Backend stellt eine Reihe von REST-APIs bereit, die vom Frontend kons
 
 ## API Endpoints
 
-The frontend communicates with the following backend API endpoints to provide core functionality.
+The following endpoints are available in the Coderr backend:
 
 ### Authentication
 - **POST** `/registration/`  
-  Register a new user.
-
+  Registers a new user.
 - **POST** `/login/`  
-  Log in a user.
-
----
+  Logs in a user.
 
 ### Profiles
 - **GET** `/profile/<int:user_id>/`  
-  Retrieve a user profile.
-
-- **GET** `/profiles/business/`  
-  Retrieve all business profiles.
-
+  Retrieves the profile of a specific user.
 - **GET** `/profiles/business/<int:user_id>/`  
-  Retrieve a specific business profile.
-
-- **GET** `/profiles/customer/`  
-  Retrieve all customer profiles.
-
+  Retrieves a specific business profile.
+- **GET** `/profiles/business/`  
+  Retrieves all business profiles.
 - **GET** `/profiles/customer/<int:user_id>/`  
-  Retrieve a specific customer profile.
-
----
-
-### Offers
-- **GET** `/offers/`  
-  Retrieve all offers.
-
-- **POST** `/offers/`  
-  Create a new offer.
-
-- **GET** `/offers/<int:id>/`  
-  Retrieve details of an offer.
-
----
-
-### Orders
-- **GET** `/orders/`  
-  Retrieve all orders.
-
-- **POST** `/orders/`  
-  Create a new order.
-
-- **GET** `/orders/<int:order_id>/`  
-  Retrieve details of an order.
-
-- **GET** `/order-count/<int:offer_id>/`  
-  Count of orders in progress for an offer.
-
-- **GET** `/completed-order-count/<int:user_id>/`  
-  Retrieve completed orders of a user.
-
----
+  Retrieves a specific customer profile.
+- **GET** `/profiles/customer/`  
+  Retrieves all customer profiles.
 
 ### Reviews
 - **GET** `/reviews/`  
-  Retrieve all reviews.
-
-- **POST** `/reviews/`  
-  Create a new review.
-
+  Retrieves all reviews.
 - **GET** `/reviews/<int:pk>/`  
-  Retrieve details of a review.
-
+  Retrieves a specific review.
+- **POST** `/reviews/`  
+  Creates a new review.
 - **PUT** `/reviews/<int:pk>/`  
-  Edit a review.
-
+  Updates a specific review.
 - **DELETE** `/reviews/<int:pk>/`  
-  Delete a review.
+  Deletes a specific review.
 
----
+### Orders
+- **GET** `/orders/`  
+  Retrieves all orders.
+- **GET** `/orders/<int:order_id>/`  
+  Retrieves the details of a specific order.
+- **POST** `/orders/`  
+  Creates a new order.
+- **GET** `/order-count/<int:offer_id>/`  
+  Retrieves the count of in-progress orders for a specific offer.
+- **GET** `/completed-order-count/<int:user_id>/`  
+  Retrieves the count of completed orders for a specific user.
+- **GET** `/user/orders/`  
+  Retrieves all orders placed by the logged-in user.
+
+### Offers
+- **GET** `/offers/`  
+  Retrieves all offers.
+- **GET** `/offers/<int:id>/`  
+  Retrieves the details of a specific offer.
+- **POST** `/offers/`  
+  Creates a new offer.
 
 ### Base Information
 - **GET** `/base-info/`  
-  Retrieve base information of the application.
+  Retrieves base information about the system.
 
----
 
 ## Hilfsfunktionen
 
